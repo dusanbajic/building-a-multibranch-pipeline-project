@@ -14,6 +14,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'env'
+                sh 'pwd'
+                sh 'touch foo'
+                sh 'ls -la'
                 sh 'npm install'
             }
         }
