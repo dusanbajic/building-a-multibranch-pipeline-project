@@ -11,7 +11,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo npm install --unsafe-perm=true --allow-root'
+                sh '''mkdir ~/.npm-global
+                    npm config set prefix '~/.npm-global'
+                    export PATH=~/.npm-global/bin:$PATH
+                    source ~/.profile
+                    npm install'''
             }
         }
         stage('Test') {
