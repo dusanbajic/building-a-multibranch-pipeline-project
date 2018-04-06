@@ -11,11 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''mkdir ~/.npm-global
-                    npm config set prefix '~/.npm-global'
-                    export PATH=~/.npm-global/bin:$PATH
-                    source ~/.profile
-                    npm install'''
+                sh 'whoami'
             }
         }
         stage('Test') {
