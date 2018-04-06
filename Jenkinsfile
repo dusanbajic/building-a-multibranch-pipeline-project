@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         CI = 'true'
+        NPM_CONFIG_PREFIX = '/tmp/.npm-global'
     }
 
     stages {
