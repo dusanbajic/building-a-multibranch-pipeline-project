@@ -14,12 +14,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '#export HOME=$(pwd)'
                 sh 'env'
-                sh '# mkdir /tmp/.npm-global'
-                sh '#npm config set prefix "/tmp/.npm-global"'
-                sh '#export PATH=/tmp/.npm-global/bin:$PATH'
-                sh '#env'
                 sh 'npm install'
             }
         }
