@@ -15,9 +15,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'env'
-                sh 'pwd'
-                sh 'touch foo'
-                sh 'ls -la'
+                sh ' mkdir /tmp/.npm-global'
+                sh 'npm config set prefix "/tmp/.npm-global"'
+                sh 'export PATH=/tmp/.npm-global/bin:$PATH'
+                sh 'env'
                 sh 'npm install'
             }
         }
